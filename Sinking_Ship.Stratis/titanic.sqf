@@ -34,7 +34,12 @@ _updateShipParts = {
 	}foreach _objs;
 };
 
-params ["_ship","_dir","_pitchBank","_timeout"];
+params [
+	["_ship", objNull, [objNull]],
+	["_dir", [0,0,-1], [[]], 3],
+	["_pitchBank", [1,0], [[]], 2],
+	["_timeout",10,[0]]
+];
 diag_log["run titanic script with params ", _ship, _dir, _pitchBank, _timeout];
 //adjust values to time
 _dir = _dir vectorMultiply (1/30);
@@ -55,6 +60,4 @@ while {_timeout > _time} do {
     sleep (1/30); //timeout
 	[_ship] call _updateShipParts; //mod dependent function to update all shipparts to virtual position.
 };
-
-if true exitWith {};
 
