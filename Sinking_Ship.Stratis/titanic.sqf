@@ -7,10 +7,8 @@
 *	@ship: object to sink
 *	@direction: direction for the ship to move in in [north, east, up] format, meters per second.
 *	@pitchBank: [pitch, bank] per second
-	@timeout: time in seconds until stopping.
+*	@timeout: time in seconds until stopping.
 *   @out: nothing
-
-	[ship_01,[10,0,-2],[-1,0],10] execVM "titanic.sqf";
 **/
 _updateShipParts = {
 	params ["_ship"];
@@ -59,16 +57,4 @@ while {_timeout > _time} do {
 };
 
 if true exitWith {};
-/**
-Put this in a man/cars init to trigger the ship sinking on the objects death:
-ship has to have variable name of "ship_01"
 
-[this] spawn {
-	params["_dude"];
-	waitUntil  {sleep 1; !alive _dude};
-	[ship_01,[0,0,-0.5],[0.5,0],8] execVM "titanic.sqf";
-	sleep 8;
-	[ship_01,[0,0,-1],[0.75,0],60] execVM "titanic.sqf";
-};
-
-*/
