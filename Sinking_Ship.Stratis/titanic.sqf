@@ -38,7 +38,7 @@ params ["_ship","_dir","_pitchBank","_timeout"];
 diag_log["run titanic script with params ", _ship, _dir, _pitchBank, _timeout];
 //adjust values to time
 _dir = _dir vectorMultiply (1/30);
-_pitchBank = _pitchBank apply {_x/30};
+_pitchBank = _pitchBank apply {(_x/30)};
 diag_log["values after adjusting: ", _ship, _dir, _pitchBank, _timeout];
 
 _time = 0;
