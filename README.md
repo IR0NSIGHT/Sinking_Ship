@@ -23,3 +23,6 @@ ship has to have variable name of "ship_01"
 	[ship_01,[0,0,-1],[0.75,0],60] execVM "titanic.sqf";
 };
 ```
+
+## Showcase:
+https://youtu.be/fsYOKd2Jel0
